@@ -1,0 +1,18 @@
+name: cinder-huawei
+summary: Huawei integration for OpenStack Block Storage
+maintainer: Chris Holcombe <chris.holcombe@canonical.com>
+description: |
+ Cinder is the block storage service for the Openstack project.
+ .
+ This charm provides a Huawei storage backend for Cinder
+categories:
+  - miscellaneous
+subordinate: true
+provides:
+  storage-backend:
+    interface: cinder-backend
+    scope: container
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container

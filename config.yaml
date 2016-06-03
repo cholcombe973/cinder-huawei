@@ -1,0 +1,62 @@
+options:
+  host-username:
+    type: string
+    description: User name of an administrator for authenticating with th Huawei server.
+  host-password:
+    type: string
+    description: Password for authenticating with th Huawei server.
+  host-ip:
+    type: string
+    description: IP address of the primary controller (not required for the 18000)
+  protocol:
+    type: string
+    description: Type of a protocol. Valid values are iSCSI or FC.
+  rest-url:
+    type: string
+    description: Access address of the Rest port (required only for the 18000)
+  product-type:
+    type: string
+    description: Type of a storage product. Possible values are T, 18000 and V3.
+  storage-pool:
+    type: string
+    description: |
+      Name of a storage pool to be used. If you need to configure multiple storage pools
+      separate them by semicolons (;).
+  lun-type:
+    type: string
+    description: Type of the LUNs to be created. The value can be Thick or Thin.
+    default: Thin
+  stripe-unit-size:
+    type: int
+    default: 64
+    description: |
+      Stripe depth of a LUN to be created. The unit is KB. This parameter is invalid when a thin LUN is created.
+      Applicable to the T series V1 storage servers.
+  write-type:
+    type: int
+    default: 1
+    description: Cache write type, possible values are: 1 (write back), 2 (write through), and 3 (mandatory write back).
+  mirror-switch:
+    type: int
+    default: 1
+    description: Cache mirroring or not, possible values are: 0 (without mirroring) or 1 (with mirroring).
+  prefetch-type:
+    type: int
+    default: 3
+    description: |
+      Cache prefetch policy. possible values are: 0 (no prefetch), 1 (fixed prefetch), 2 (variable prefetch)
+      or 3 (intelligent prefetch). Applicable to the T series V1 storage servers.
+  prefetch-value:
+    type: int
+    default: 0
+    description: Cache prefetch value.
+  initiator-name:
+    type: string
+    description: Name of a compute node initiator.
+  initiator-target-ip:
+    type: string
+    description: IP address of the iSCSI port provided for compute nodes.
+  initiator-target-portgroup:
+    type: string
+    description: |
+      IP address of the iSCSI target port that is provided for computing nodes.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <Storage>
+        <Product>{{product}}</Product>
+        <Protocol>{{protocol}}</Protocol>
+        <ControllerIP1>{{controller_ip}}</ControllerIP1>
+        <UserName>{{username}}</UserName>
+        <UserPassword>{{password}}</UserPassword>
+    </Storage>
+    <LUN>
+        <LUNType>{{lun_type}}</LUNType>
+        <StripUnitSize>{{stripe_size}}</StripUnitSize>
+        <WriteType>{{write_type}}</WriteType>
+        <MirrorSwitch>{{mirror_switch}}</MirrorSwitch>
+        <Prefetch Type="{{prefetch_type}}" Value="{{prefetch_value}}"/>
+        <StoragePool Name="{{storage_pool}}"/>
+        <!-- multiple pools can go here -->
+    </LUN>
+    <iSCSI>
+        <DefaultTargetIP>{{iscsi_target}}</DefaultTargetIP>
+        <Initiator Name="{{initiator}}" TargetIP="{{target_ip}}"/>
+    </iSCSI>
+    <Host OSType="Linux" HostIP="{{hosts_ip_list}}"/>
+</config>
